@@ -1,0 +1,5 @@
+%h1
+  Create new card!
+= render :partial=>'form', :locals => {:serie => @serie, :card=> @card, :button_description=>'Create'}
+%p
+  = link_to "Back to cards in serie #{@serie.name}", series_path(@serie)

@@ -1,0 +1,13 @@
+%h1
+  Edit serie!
+
+-#-form_for :serie, @serie, {:url => series_path, :method=>:put} do |f|
+- form_for @serie do |f|
+  %p
+    = f.label :name, 'Serie'
+    = f.text_field :name
+  %p
+    = f.submit 'Update'
+
+%p
+  =link_to 'Back to series', series_path(@serie)

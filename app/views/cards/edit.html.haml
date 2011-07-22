@@ -1,0 +1,5 @@
+%h1
+  Edit card!
+= render :partial=>'form', :locals => {:serie => @serie, :card=> @card, :button_description=>'Update!!'}
+%p
+  = link_to "Back to cards in serie #{@serie.name}", series_path(@serie)

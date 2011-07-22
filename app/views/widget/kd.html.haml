@@ -1,0 +1,36 @@
+:javascript
+  jQuery(document).ready(function() {
+    jQuery("#resolution").hide();
+
+    jQuery("input:radio[name=options]").click(function(){
+
+      if (jQuery('input:radio[name=options]:checked').val()=="games"){
+        jQuery("#resolution").show();
+        }
+      else{
+        jQuery("#resolution").hide();
+        jQuery("#resolution").val("0")
+        }
+    });
+    
+    
+
+  
+   
+  });
+  
+
+%h1
+  = t("kd.name")
+
+- form_remote_tag :url=>url_for(:controller=>:widget, :action=>:kd_find_cards), :html => {:action=>url_for(:controller=>:widget, :action=>:kd_find_cards)}, :method=>:get, :update => :found_cards, :before=>"Element.show('spinner')", :success => "Element.hide('spinner')" do
+  = render :partial=>"kd_form"
+
+  %p
+    = submit_tag "Dobierz", :class => "kd_submit", :style=>"float: left; width: 90px"
+    .spinner_kd
+      = image_tag "ajax-loader.gif", :id=>"spinner", :style=>"display: none"
+
+#found_cards.kd_found_cards
+
+%div#compare_cards

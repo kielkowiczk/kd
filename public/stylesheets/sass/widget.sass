@@ -1,0 +1,171 @@
+$background_color: #b3d7f4
+$widget_backgrounnd_color: #c0deed
+$kd_font_fize: 12px
+@mixin opacity($value) 
+  opacity: #{"." + $value}
+  filter: alpha(opacity=$value)
+  -ms-filter: "alpha(opacity=$value)"
+  -khtml-opacity: #{"." + $value}
+  -moz-opacity: #{"." + $value}
+
+body
+  font-family: "lucida grande",tahoma,verdana,arial,sans-serif
+  font-size: 11px
+  background-color: black
+
+  color: black 
+  background:
+    color: black
+    image: url('../images/bg.png')
+    position: top left
+    repeat: no-repeat
+  //-moz-border-radius: 10px
+  //-webkit-border-radius: 10px
+
+h1
+  font-size: 17px  
+
+a
+  color: #3B5998 
+  cursor: pointer
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+.home_link
+  font:
+    size: 1.2em
+  
+
+table
+  text:
+    align: left
+  font-size: 11px  
+
+table.kd_table
+  text:
+    align: left 
+  font:
+    size: $kd_font_fize
+  td
+    padding:
+      right: 20px 
+      bottom: 10px
+    width: 250px
+    
+.header_welcome
+  color: white 
+  text-align: center
+  font-size: 2.5em
+  //font-variant: small-caps
+  font-weight: bold
+  margin: 0 0 0 0
+  padding: 0 0 0 0 
+
+.small_opacity
+
+.content
+  /*background:
+    image: url('../images/sapphire_logo.jpeg')
+    repeat: no-repeat
+    position: right top*/
+  width: 620px      
+  -moz-border-radius: 10px
+  -webkit-border-radius: 10px
+  margin: 10 auto 0 auto
+  padding: 20px 
+  position: relative
+  //position: absolute
+ 
+.transparent_bg
+  width: 100% 
+  height: 100%
+  position: absolute
+  margin: 10 auto 0 auto
+  top: 0px
+  left: 0px
+  background-color: lighten(#d88765, 40)
+  z-index: -2 
+  -moz-border-radius: 10px
+  -webkit-border-radius: 10px
+
+
+#search_result
+  padding-top: 20px
+  padding-left: 5px
+  clear: both
+
+#search_spinner
+  width: 20px
+  clear: none
+  float: left
+  padding-left: 10px
+  padding-top: 3px 
+
+.like_button
+  float: right
+
+table.kp_table
+  color: lighten (black, 50%)
+  text-align: center
+  
+  th.property
+    font-weight: normal
+
+  th.card_name
+    font-variant: small-caps
+
+  td
+    padding-right: 5px
+    padding-left: 8px
+
+  tr.odd
+    background-color: lighten($background_color, 14%)
+  tr.even
+    background-color: lighten($background_color, 9%)
+  td.max
+    font-weight: bolder
+
+p.submit_tag
+  padding-left: 10px
+
+.kd_submit
+  font-size: $kd_font_fize
+
+.kd_select
+  font-size: $kd_font_fize
+
+.kd_found_cards
+  font-size: $kd_font_fize
+  clear: both
+  margin:
+    top: 35px
+
+.kd_description
+  font:
+    size: 9px
+  color: gray
+  margin:
+    left: 25px
+    right: 25px
+
+.spinner_kd
+  display: block
+  width: 16px
+  height: 16px
+  position: relative
+  top: -20px
+  left: 100px
+
+.spinner_kd_cmp
+  display: block
+  width: 16px
+  height: 16px
+  position: relative
+  top: -31px
+  left: 80px
+
+.ati_logo
+  position: absolute
+  top: 60px
+  right: 50px 
+

@@ -1,0 +1,39 @@
+%h1
+  = t("widget.header")
+.like_button
+  = "<fb:like href='http://www.facebook.com/apps/application.php?id=147419901939806' show_faces='false' width='50'></fb:like>"
+%h3
+  = t("widget.instruction")
+- form_remote_tag(:update => "search_result", :url => { :action => :search }, :before => "Element.show('search_spinner'); Element.hide('cmp_from_kd')", :success => "Element.hide('search_spinner'); setSize();") do |f|
+  %div.small_opacity
+    %table
+      - 1.upto 4 do |number|
+        %tr
+          %td
+            = select("serie_#{number}", :card, @series, {:prompt => t("select.prompt") }, :selected => nil)
+            = observe_field "serie_#{number}_card", :url => { :action => :update_widget }, :before=>"Element.hide('serie_#{number}_models'); Element.show('spinner#{number}')", :success=>"Element.hide('spinner#{number}')", :complete => "Element.show('serie_#{number}_models'); update_me();", :frequency => 0.8, :update => "serie_#{number}_models", :with => "serie_selector#{number}"
+          %td
+            %div{:id=>"spinner#{number}", :style=>'display: none'}
+              = image_tag('ajax-loader.gif')
+            %div{:id=>"serie_#{number}_models"}
+      
+
+    %p.submit_tag
+      = submit_tag t("button.compare"), :style => 'float: left'
+      #search_spinner{:style => 'display: none;'}
+        = image_tag 'ajax-loader.gif'
+#search_result
+
+#cmp_from_kd
+  -if @from_kd
+    :javascript
+      FB.Canvas.setSize({ height: #{991}});
+     
+    = render :partial=>"cmp_cards", :locals => {:cards=>@cards, :values=>@values, :find_in_rows=>@find_in_rows, :max_values=>@max_values}
+    = update_selects_to @cards
+-#%p
+-#  = link_to 'test - url', describe_url(3,8)
+-#%p
+-#  = link_to 'test - path', describe_path(3,8)
+-#%p
+-#  = link_to 'cmp', :controller=>:widget, :action=>:cmp, :query => {:cards=>[1,2], :series=>[3,4]}

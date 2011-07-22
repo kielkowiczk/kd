@@ -1,0 +1,8 @@
+.DS_Store
+*~
+db/development*
+log/
+public/stylesheets/base.css
+tmp/
+*.swp
+.rvmrc

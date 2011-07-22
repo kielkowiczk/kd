@@ -1,0 +1,19 @@
+%h1
+  = "Serie '#{@serie.name}'"
+%p
+  = "there are #{@serie.cards.count} cards in this serie"
+
+#new_card_in_serie_link{:style => 'padding-bottom: 10px'}
+  =link_to 'Create new card', new_series_card_path(@serie)
+  
+%table
+  -@serie.cards.each do |card|
+    %tr
+      %td
+        = link_to card.name, series_card_path(@serie, card)
+      %td
+        = link_to 'Edit', edit_series_card_path(@serie, card)
+      %td
+        = link_to 'Delete', series_card_path(@serie, card), :confirm => 'Delete this card?', :method => :delete 
+%p
+  = link_to 'Go back to series', series_index_path

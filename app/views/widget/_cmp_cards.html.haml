@@ -1,0 +1,39 @@
+:javascript
+  FB.Canvas.setSize({ height: 1022});
+
+- if not cards.nil?
+  -unless cards.blank?
+    = make_dialog_for_cards cards
+    - i = 0
+    %table.kp_table
+      -values.each_with_index do |value, index|
+        %tr{:class=>"#{index % 2 == 0 ? "even" : "odd"}"}
+          - value.each_with_index do |val, ind|
+            -if ind==0 or index == 0
+              - if index == 0
+                -if ind>0 
+                  %th.card_name= link_to val, '#', :id=>"card#{cards[i].id}" 
+                  -i+=1
+                -else
+                  %th.card_name= val  
+              - else
+                %th.property= val
+            -else
+              -if index < values.size - 3
+                -if find_in_rows.include? index and max_values.include? val.to_f
+                  %td.max= val
+                -else 
+                  %td=val
+              -elsif index == values.size - 3 and ind == 0
+                %th= val
+              -elsif index == values.size - 3 and ind > 0
+                %td= make_link_to_gallery val
+              -elsif index == values.size - 2 and ind == 0
+                %th= val unless val.nil?
+              -elsif index == values.size - 2 and ind > 0
+                %td= (make_link_to_ceneo val) unless val.nil?
+              -else
+                %td=val unless val.nil?
+          
+  - else
+    no card!

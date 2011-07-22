@@ -1,0 +1,50 @@
+pl:
+    kp:
+        name: "Kartoporównywacz"
+    kd:
+        name: "Kartodobieracz – pomoże wybrać najlepszą kartę Sapphire dla Ciebie"
+        
+    card_description:
+        card_name: 'Nazwa karty'
+        sku_number: 'Numer SKU'
+        process: 'Proces technologiczny [nm]'
+        ram: 'Pamięć RAM'
+        core_freq: 'Częstotliwość rdzenia [MHz]'
+        mem_freq: 'Częstotliwość pamięci [MHz]'
+        stream: 'Procesory strumieniowe'
+        mem_bus: 'Magistrala pamięci (bit)'
+        mem_type: 'Typ pamięci'
+        mem_speed: 'Przepustowość pamięci [GB/s]'
+        cooling_type: 'Rodzaj chłodzenia'
+        cooling_height: 'Wysokość chłodzenia'
+        aux_power: 'Dodatkowe zasilanie'
+        directx: 'DirectX'
+        opengl: 'OpenGL'
+        vga: 'Wyjście VGA'
+        dvi: 'Wyjście DVI'
+        tv_out: 'Wyjście TV-Out'
+        hdmi: 'Wyjście HDMI'
+        display_port: 'Wyjście DisplayPort'
+        hdmi_ver: 'Wersja HDMI'
+        hdmi_mode: 'Tryby HDMI'
+        resolution: 'Maks. rozdzielczość'
+        min_power: 'Min. pobór mocy [W]'
+        max_power: 'Maks. pobór mocy [W]'
+        gallery: 'Galeria'
+        ceneo: 'Ceneo'
+        like_this: 'Like this!'
+    
+    home_page:
+        title: "Świat kart SAPPHIRE"
+        hello_message: "Witaj w świecie kart graficznych Sapphire!"
+        added_lately: "Ostatnio dodane karty:"
+    widget:
+        header: "Porównaj karty SAPPHIRE"
+        instruction: "Wybierz serię a następnie model karty"
+        home_button: "Strona główna"
+        kd:
+          found_cards: "Znalezione karty:"
+    button:
+        compare: "Porównaj"
+    select:
+        prompt: "Wybierz serię..."

@@ -1,0 +1,7 @@
+%h1
+  = @card.name
+%p
+  = @description
+  
+%p
+  = link_to "Back to cards in serie #{@serie.name}", series_path(@serie)

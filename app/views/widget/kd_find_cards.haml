@@ -1,0 +1,54 @@
+%h1
+  = t("widget.kd.found_cards")
+
+:javascript
+  jQuery("#kd_submit_cmp").click(
+    function () {
+      jQuery("#spinner1").css("display", "inline");
+    }
+  );
+- form_tag :controller=>:widget, :action => :search, :from=>"kd" do
+  %table
+    - @cards.each do |card|
+      %tr
+        %td
+          = check_box_tag "cards_to_cmp[]", [card.serie.id, card.id].to_json
+        %td
+          = link_to card.name, '#', :id => "card#{card.id}"
+
+  %p
+    =submit_tag "Porownaj!", :class => "kd_submit", :style=>"flaot: left", :id=>"kd_submit_cmp"
+    .spinner_kd_cmp
+      = image_tag "ajax-loader.gif", :id=>"spinner1", :style=>"display: none"
+
+   
+-#= make_dialog_content_for @cards 
+:javascript
+  jQuery("input[name='cards_to_cmp[]']").click(showCheckedValues);
+  jQuery("#kd_submit_cmp").attr('disabled', 'disabled');
+ 
+  function showCheckedValues() {
+      // Gather all values of checked checkboxes with name "bedrooms".
+      var checked = jQuery("input[name='cards_to_cmp[]']:checked").map(function() {
+                      return this.value;
+      }).get();
+               
+      if (checked.length == 4) {
+        jQuery("input[name='cards_to_cmp[]']").not(":checked").attr('disabled', 'disabled');
+      }
+        else {
+          jQuery("input[name='cards_to_cmp[]']").not(":checked").removeAttr('disabled');
+      }
+      
+      if (checked.length == 0) {
+          jQuery("#kd_submit_cmp").attr('disabled', 'disabled');
+      }
+      else {
+          jQuery("#kd_submit_cmp").removeAttr('disabled');
+      }
+    }
+  
+  //resize canvas
+  FB.Canvas.setSize({ height: #{@cards.count*22 + 700}});
+   
+= make_dialog_for_cards @cards

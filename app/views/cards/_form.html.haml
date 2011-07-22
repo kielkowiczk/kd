@@ -1,0 +1,113 @@
+- form_for [serie, card] do |f|
+  %table  
+    %tr
+      %td= f.label :name, 'Nazwa karty'
+      %td= f.text_field :name
+    %tr
+      %td= f.label :sku, 'Numer SKU'
+      %td= f.text_field :sku
+   
+    %tr
+      %td= f.label :process, 'Proces technologiczny [nm]'
+      %td= f.text_field :process
+    %tr
+      %td= f.label :memory_options, 'Pamięć RAM'
+      %td= f.text_field :memory_options
+    %tr
+      %td= f.label :core_frequency, 'Częstotliwość rdzenia [MHz]'
+      %td= f.text_field :core_frequency
+    %tr
+      %td= f.label :memory_frequency, 'Częstotliwość pamięci [MHz]'
+      %td= f.text_field :memory_frequency
+    %tr
+      %td= f.label :unified_shader_pipelines, 'Procesory strumieniowe'
+      %td= f.text_field :unified_shader_pipelines
+    %tr
+      %td= f.label :memory_bus, 'Magistrala pamięci (bit)'
+      %td= f.text_field :memory_bus
+    %tr
+      %td= f.label :memory_type, 'Typ pamięci'
+      %td= f.text_field :memory_type
+    %tr
+      %td= f.label :peak_memory_bandwidth, 'Przepustowość pamięci [GB/s]'
+      %td= f.text_field :peak_memory_bandwidth
+    %tr
+      %td= f.label :standard_cooling, 'Rodzaj chłodzenia'
+      %td= f.text_field :standard_cooling
+    %tr
+      %td= f.label :standard_slot_solution, 'Wysokość chłodzenia'
+      %td= f.text_field :standard_slot_solution
+    %tr
+      %td= f.label :external_power_need, 'Dodatkowe zasilanie'
+      %td= f.text_field :external_power_need
+    %tr
+      %td= f.label :directX, 'DirectX'
+      %td= f.text_field :directX
+    %tr
+      %td= f.label :openGL, 'OpenGL'
+      %td= f.text_field :openGL
+    %tr
+      %td= f.label :vga, 'Wyjście VGA'
+      %td= f.text_field :vga
+    %tr
+      %td= f.label :dvi_i, 'Wyjście DVI'
+      %td= f.text_field :dvi_i
+    %tr
+      %td= f.label :tv_out, 'Wyjście TV-Out'
+      %td= f.text_field :tv_out
+    %tr
+      %td= f.label :hdmi, 'Wyjście HDMI'
+      %td= f.text_field :hdmi
+    %tr
+      %td= f.label :display_port, 'Wyjście DisplayPort'
+      %td= f.text_field :display_port
+    %tr
+      %td= f.label :hdmi_compliance,  'Wersja HDMI'
+      %td= f.text_field :hdmi_compliance
+    %tr
+      %td= f.label :hdmi_modes, 'Tryby HDMI'
+      %td= f.text_field :hdmi_modes
+    %tr
+      %td= f.label :graphics_resolution, 'Maksymalna rozdzielczość obrazu'
+      %td= f.text_field :graphics_resolution
+    %tr
+      %td= f.label :min_power, 'Min. pobór mocy [W]'
+      %td= f.text_field :min_power
+    %tr
+      %td= f.label :max_power, 'Maks. pobór mocy [W]'
+      %td= f.text_field :max_power
+    %tr
+      %td= f.label :link_to_gallery, 'Link do galeri'
+      %td= f.text_field :link_to_gallery
+    %tr
+      %td= f.check_box :is_quiet
+      %td= f.label :is_quiet, "Is quite?"
+    %tr
+      %td= f.check_box :is_power_efficiant
+      %td= f.label :is_power_efficiant, "Is power efficient?"
+    %tr
+      %td= f.check_box :good_to_overclocking
+      %td= f.label :good_to_overclocking, "Is good to overcloacking?"
+    %tr
+      %td= f.check_box :is_low_profile
+      %td= f.label :is_low_profile, "Low profile?"
+    %tr
+      %td= f.check_box :to_office
+      %td= f.label :to_office, "Good to office?"
+    %tr
+      %td= f.check_box :to_movies
+      %td= f.label :to_movies, "Good to movies?"
+    %tr
+      %td= f.label :good_to_play_with_resoulution, "Choose resolution"
+      %td= f.select(:good_to_play_with_resoulution, [['1024x768',1], ['1280x1200',2], ['1600x1200',3], ['1920x1080 (Full HD)',4]])
+    
+    %table
+      %tr
+        %th Language
+        %th Description
+      -f.fields_for :opinions do |f_o|
+        %tr
+          %td=f_o.text_field :language, :readonly=>true, :size=>3, :tabindex=>-1
+          %td=f_o.text_area :description, :rows=>6, :cols=>50
+  %p
+    = f.submit button_description

@@ -1,0 +1,13 @@
+-# coding: UTF-8
+!!!
+%html
+  %head>
+    %title Sapphire facebook app
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=UTF-8'}
+    = stylesheet_link_tag 'base'
+  %body
+    = link_to 'Series', series_index_path
+    = " | "
+    = link_to 'Facebook', "http://facebook.com"
+    %div
+      = yield

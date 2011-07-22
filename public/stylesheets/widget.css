@@ -1,0 +1,139 @@
+body {
+  font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+  font-size: 11px;
+  background-color: black;
+  color: black;
+  background-color: black;
+  background-image: url("../images/bg.png");
+  background-position: top left;
+  background-repeat: no-repeat; }
+
+h1 {
+  font-size: 17px; }
+
+a {
+  color: #3b5998;
+  cursor: pointer;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+.home_link {
+  font-size: 1.2em; }
+
+table {
+  text-align: left;
+  font-size: 11px; }
+
+table.kd_table {
+  text-align: left;
+  font-size: 12px; }
+  table.kd_table td {
+    padding-right: 20px;
+    padding-bottom: 10px;
+    width: 250px; }
+
+.header_welcome {
+  color: white;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0; }
+
+.content {
+  /*background:
+   * image: url('../images/sapphire_logo.jpeg')
+   * repeat: no-repeat
+   * position: right top */
+  width: 620px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin: 10 auto 0 auto;
+  padding: 20px;
+  position: relative; }
+
+.transparent_bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 10 auto 0 auto;
+  top: 0px;
+  left: 0px;
+  background-color: white;
+  z-index: -2;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px; }
+
+#search_result {
+  padding-top: 20px;
+  padding-left: 5px;
+  clear: both; }
+
+#search_spinner {
+  width: 20px;
+  clear: none;
+  float: left;
+  padding-left: 10px;
+  padding-top: 3px; }
+
+.like_button {
+  float: right; }
+
+table.kp_table {
+  color: lighten black, 50%;
+  text-align: center; }
+  table.kp_table th.property {
+    font-weight: normal; }
+  table.kp_table th.card_name {
+    font-variant: small-caps; }
+  table.kp_table td {
+    padding-right: 5px;
+    padding-left: 8px; }
+  table.kp_table tr.odd {
+    background-color: #f1f8fd; }
+  table.kp_table tr.even {
+    background-color: #dbecfa; }
+  table.kp_table td.max {
+    font-weight: bolder; }
+
+p.submit_tag {
+  padding-left: 10px; }
+
+.kd_submit {
+  font-size: 12px; }
+
+.kd_select {
+  font-size: 12px; }
+
+.kd_found_cards {
+  font-size: 12px;
+  clear: both;
+  margin-top: 35px; }
+
+.kd_description {
+  font-size: 9px;
+  color: gray;
+  margin-left: 25px;
+  margin-right: 25px; }
+
+.spinner_kd {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: -20px;
+  left: 100px; }
+
+.spinner_kd_cmp {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: -31px;
+  left: 80px; }
+
+.ati_logo {
+  position: absolute;
+  top: 60px;
+  right: 50px; }

@@ -1,0 +1,12 @@
+%h1
+  Create new serie!
+
+-form_for :serie, @serie, :url => series_index_path do |f|
+  %p
+    = f.label :name, 'Serie'
+    = f.text_field :name
+  %p
+    = f.submit 'Create'
+    = |
+    = link_to 'Cancle', :back
+    

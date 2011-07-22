@@ -1,0 +1,2 @@
+- unless @serie.nil? or @cards.nil?
+  = collection_select "card", "serie_selector_#{@selector_number}", @cards, :id, :name

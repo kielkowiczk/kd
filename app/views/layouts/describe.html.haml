@@ -1,0 +1,13 @@
+%html(xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml")
+  %head
+    %title= "Sapphire #{@card.name}"
+    %meta{:property=>'og:title', :content=>"Sapphire #{@card.name}"}
+    %meta{:property=>'og:type', :content=>"product"}
+    %meta{:property=>'og:url', :content=>"http://hollow-galaxy-24.heroku.com/describe/#{@card.serie.id}/#{@card.id}/"}
+    %meta{:property=>'og:image', :content=>"http://hollow-galaxy-24.heroku.com/images/Radeon.jpg"}
+    %meta{:property=>'og:site_name', :content=>"Sapphire cards"}
+    %meta{:property=>'fb:app_id', :content=>"121067741270836"}
+
+  %body
+    =yield

@@ -1,0 +1,17 @@
+%h1.small_opacity
+  = t "home_page.hello_message"
+
+%ul.small_opacity
+  %li.small_opacity
+    = link_to t("kp.name"), kp_path
+  %li.small_opacity
+    = link_to t("kd.name"), kd_path
+
+
+%p.small_opacity
+  = t "home_page.added_lately"
+%ul.small_opacity
+  -@cards.each do |card|
+    %li.small_opacity
+      = link_to card.name, '#', :id=>"card#{card.id}"
+= make_dialog_for_cards @cards

@@ -1,0 +1,42 @@
+en:
+    card_description:
+        card_name: 'Card name'
+        sku_number: 'SKU number'
+        process: 'Process [nm]'
+        ram: 'RAM memory'
+        core_freq: 'Core frequency [MHz]'
+        mem_freq: 'Memory frequency [MHz]'
+        stream: 'Stream processors'
+        mem_bus: 'Bus memory (bit)'
+        mem_type: 'Memory type'
+        mem_speed: 'Memory speed [GB/s]'
+        cooling_type: 'Cooling type'
+        cooling_height: 'Cooling height'
+        aux_power: 'Auxiliary  power'
+        directx: 'DirectX'
+        opengl: 'OpenGL'
+        vga: 'VGA'
+        dvi: 'DVI'
+        tv_out: 'TV-Out'
+        hdmi: 'HDMI'
+        display_port: 'DisplayPort'
+        hdmi_ver: 'HDMI version'
+        hdmi_mode: 'HDMI mode'
+        resolution: 'Max resolution'
+        min_power: 'Min power [W]'
+        max_power: 'Max power [W]'
+        gallery: 'Gallery'
+        ceneo: 'Ceneo'
+        like_this: 'Like this!'
+    home_page:
+        title: "Sapphire card world"
+        hello_message: "Welcome in Sapphire world!"
+        added_lately: "Lately added cards:"
+    widget:
+        header: "Compare SAPPHIRE cards"
+        instruction: "Select series and then card(s) to compare"
+    button:
+        compare: "Compare"
+    select:
+        prompt: "Choose series..."
+        

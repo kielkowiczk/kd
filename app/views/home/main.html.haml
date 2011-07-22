@@ -1,0 +1,7 @@
+%p
+  = t "home_page.added_lately"
+%ul
+  -@cards.each do |card|
+    %li
+      = link_to card.name, describe_path(card.serie.id, card.id)
+        

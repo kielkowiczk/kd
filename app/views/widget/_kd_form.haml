@@ -1,0 +1,48 @@
+%table.kd_table
+  %tr
+    %td
+      %div
+        = check_box_tag :is_quite
+        = label_tag :is_quite, "Cicha karta"
+      .kd_description
+        System chłodzenia jest dostosowany do cichej lub nawet bezgłośnej pracy
+    %td
+      %div
+        = radio_button_tag :options, "games"
+        = label_tag :options_games, "Gry"
+        = select_tag(:resolution, options_for_select([["Select reslution",0],["1024x768",1],["1280x1024",2],["1600x1200",3],["1920x1080 i wyższe",4]],0), :class => "kd_select")
+      .kd_description
+
+  %tr
+    %td
+      %div
+        = check_box_tag :is_power_efficiant
+        = label_tag :is_power_efficiant, "Pobiera nie dużo energii"
+      .kd_description
+        Pobór mocy nie przekracza 75W, nawet pod obciążeniem 
+    %td
+      %div
+        = radio_button_tag :options, "office"
+        = label_tag :options_office, "Prace biurowe"
+      .kd_description
+  %tr
+    %td
+      %div
+        = check_box_tag :good_to_overclocking
+        = label_tag :good_to_overclocking, "Dobrze się podkręca"
+      .kd_description
+        Karty o podzespołach umożliwiających podniesienie zegarów powyżej wartości standardowych 
+    %td
+      %div
+        = radio_button_tag :options, "movies", :html=>{:style=>"display: none"}
+        = label_tag :options_movies, "Filmy"
+      .kd_description
+
+  %tr
+    %td
+      %div
+        = check_box_tag :is_low_profile
+        = label_tag :is_low_profile, "Nisko profilowana"
+      .kd_description
+        Karty ze skróconym śledziem, idealne do komputerów HTPC
+    %td
